@@ -131,36 +131,54 @@ const baseStyles = css`
   input[type=range] {
     -webkit-appearance: none;
     appearance: none;
+    display: block;
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background: var(--mc-slider-track, rgba(255,255,255,0.12));
+    background: transparent;
     outline: none;
     cursor: pointer;
-    transition: background var(--mc-transition, 300ms ease);
+    margin: 6px 0 2px;
+    padding: 0;
+  }
+  input[type=range]:disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
   }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background: var(--mc-slider-thumb, #ffb938);
+    background: #ffb938;
     cursor: pointer;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    margin-top: -6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
     transition: transform 150ms ease;
   }
   input[type=range]::-webkit-slider-thumb:active {
-    transform: scale(1.2);
+    transform: scale(1.3);
+  }
+  input[type=range]::-moz-range-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
   }
   input[type=range]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background: var(--mc-slider-thumb, #ffb938);
+    background: #ffb938;
     cursor: pointer;
     border: none;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
   .unavailable {
     opacity: 0.4;

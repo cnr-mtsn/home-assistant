@@ -339,37 +339,50 @@ const baseStyles = css`
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background: rgba(255,255,255,0.15);
+    background: transparent;
     outline: none;
     cursor: pointer;
-    margin: 4px 0 2px;
-    transition: opacity var(--mc-transition, 300ms ease);
+    margin: 6px 0 2px;
+    padding: 0;
   }
   input[type=range]:disabled {
-    opacity: 0.3;
+    opacity: 0.35;
     pointer-events: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
   }
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background: var(--mc-slider-thumb, #ffb938);
+    background: #ffb938;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    margin-top: -6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
     transition: transform 150ms ease;
   }
   input[type=range]::-webkit-slider-thumb:active {
-    transform: scale(1.25);
+    transform: scale(1.3);
+  }
+  input[type=range]::-moz-range-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
   }
   input[type=range]::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background: var(--mc-slider-thumb, #ffb938);
+    background: #ffb938;
     cursor: pointer;
     border: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
   /* fan row in expand panel */
