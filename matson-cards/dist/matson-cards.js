@@ -1,4 +1,13 @@
 /**
+ * matson-cards v1.0.1
+ * Custom Lovelace card library for Home Assistant
+ * https://github.com/cnr-mtsn/home-assistant
+ */
+import { LitElement, html, css } from 'https://esm.sh/lit@3';
+
+
+// ── matson-light-card.js ──────────────────────────────────────
+/**
  * matson-light-card
  * Single light control with on/off, brightness slider, and color temp slider.
  *
@@ -7,7 +16,6 @@
  *   name: string              — optional override name
  *   style: "monochrome" | "liquid-glass"
  */
-import { LitElement, html, css } from 'https://esm.sh/lit@3';
 
 const baseStyles = css`
   :host {
@@ -305,6 +313,9 @@ window.customCards.push({
   name: 'Matson Light Card',
   description: 'Single light control with brightness and color temp sliders.',
 });
+
+
+// ── matson-room-card.js ──────────────────────────────────────
 /**
  * matson-room-card
  * Room overview with master toggle, individual light controls, and optional fan/switch.
@@ -319,7 +330,6 @@ window.customCards.push({
  *   fan_name: "Fan"                     — optional
  *   style: "monochrome" | "liquid-glass"
  */
-import { LitElement, html, css } from 'https://esm.sh/lit@3';
 
 const baseStyles = css`
   :host {
@@ -728,6 +738,9 @@ window.customCards.push({
   name: 'Matson Room Card',
   description: 'Room overview with master toggle and individual light controls.',
 });
+
+
+// ── matson-status-chip.js ──────────────────────────────────────
 /**
  * matson-status-chip
  * A small status chip/badge showing entity state with icon and configurable color.
@@ -741,7 +754,6 @@ window.customCards.push({
  *     away: "#f44336"
  *   style: "monochrome" | "liquid-glass"
  */
-import { LitElement, html, css } from 'https://esm.sh/lit@3';
 
 const baseStyles = css`
   :host {
@@ -843,6 +855,9 @@ window.customCards.push({
   name: 'Matson Status Chip',
   description: 'A small entity state chip with configurable colors.',
 });
+
+
+// ── matson-header-card.js ──────────────────────────────────────
 /**
  * matson-header-card
  * Full-width dashboard header with time, date, and person presence chips.
@@ -857,7 +872,6 @@ window.customCards.push({
  *       icon: mdi:account-heart
  *   style: "monochrome" | "liquid-glass"
  */
-import { LitElement, html, css } from 'https://esm.sh/lit@3';
 
 const baseStyles = css`
   :host {
@@ -1051,6 +1065,9 @@ window.customCards.push({
   name: 'Matson Header Card',
   description: 'Full-width dashboard header with time, date, and person presence.',
 });
+
+
+// ── matson-hero-card.js ──────────────────────────────────────
 /**
  * matson-hero-card
  * The showpiece overview card — all rooms at a glance with expandable controls
@@ -1077,7 +1094,6 @@ window.customCards.push({
  *         - entity: light.left_floor_lamp
  *         - entity: light.right_floor_lamp
  */
-import { LitElement, html, css } from 'https://esm.sh/lit@3';
 
 const baseStyles = css`
   :host {
@@ -1704,3 +1720,4 @@ window.customCards.push({
   name: 'Matson Hero Card',
   description: 'Showpiece overview card — all rooms with expandable light controls and ambient glow.',
 });
+
