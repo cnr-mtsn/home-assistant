@@ -1,5 +1,5 @@
 /**
- * matson-cards v1.0.1
+ * matson-cards v1.0.2
  * Custom Lovelace card library for Home Assistant
  * https://github.com/cnr-mtsn/home-assistant
  */
@@ -16,8 +16,7 @@ import { LitElement, html, css } from 'https://esm.sh/lit@3';
  *   name: string              — optional override name
  *   style: "monochrome" | "liquid-glass"
  */
-
-const baseStyles = css`
+const light_baseStyles = css`
   :host {
     display: block;
     font-family: var(--mc-font, system-ui, sans-serif);
@@ -202,7 +201,7 @@ class MatsonLightCard extends LitElement {
     };
   }
 
-  static get styles() { return baseStyles; }
+  static get styles() { return light_baseStyles; }
 
   setConfig(config) {
     if (!config.entity) throw new Error('matson-light-card requires an entity');
@@ -330,8 +329,7 @@ window.customCards.push({
  *   fan_name: "Fan"                     — optional
  *   style: "monochrome" | "liquid-glass"
  */
-
-const baseStyles = css`
+const room_baseStyles = css`
   :host {
     display: block;
     font-family: var(--mc-font, system-ui, sans-serif);
@@ -573,7 +571,7 @@ class MatsonRoomCard extends LitElement {
     };
   }
 
-  static get styles() { return baseStyles; }
+  static get styles() { return room_baseStyles; }
 
   setConfig(config) {
     if (!config.lights || !config.lights.length) {
@@ -754,8 +752,7 @@ window.customCards.push({
  *     away: "#f44336"
  *   style: "monochrome" | "liquid-glass"
  */
-
-const baseStyles = css`
+const chip_baseStyles = css`
   :host {
     display: inline-block;
     font-family: var(--mc-font, system-ui, sans-serif);
@@ -806,7 +803,7 @@ class MatsonStatusChip extends LitElement {
     };
   }
 
-  static get styles() { return baseStyles; }
+  static get styles() { return chip_baseStyles; }
 
   setConfig(config) {
     if (!config.entity) throw new Error('matson-status-chip requires an entity');
@@ -872,8 +869,7 @@ window.customCards.push({
  *       icon: mdi:account-heart
  *   style: "monochrome" | "liquid-glass"
  */
-
-const baseStyles = css`
+const header_baseStyles = css`
   :host {
     display: block;
     font-family: var(--mc-font, system-ui, sans-serif);
@@ -980,7 +976,7 @@ class MatsonHeaderCard extends LitElement {
     };
   }
 
-  static get styles() { return baseStyles; }
+  static get styles() { return header_baseStyles; }
 
   constructor() {
     super();
@@ -1094,8 +1090,7 @@ window.customCards.push({
  *         - entity: light.left_floor_lamp
  *         - entity: light.right_floor_lamp
  */
-
-const baseStyles = css`
+const hero_baseStyles = css`
   :host {
     display: block;
     font-family: var(--mc-font, system-ui, sans-serif);
@@ -1491,7 +1486,7 @@ class MatsonHeroCard extends LitElement {
     };
   }
 
-  static get styles() { return baseStyles; }
+  static get styles() { return hero_baseStyles; }
 
   constructor() {
     super();
