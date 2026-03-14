@@ -335,12 +335,14 @@ const baseStyles = css`
   input[type=range] {
     -webkit-appearance: none;
     appearance: none;
+    display: block;
     width: 100%;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--mc-slider-track, rgba(255,255,255,0.12));
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.15);
     outline: none;
     cursor: pointer;
+    margin: 4px 0 2px;
     transition: opacity var(--mc-transition, 300ms ease);
   }
   input[type=range]:disabled {
@@ -514,16 +516,15 @@ class MatsonHeroCard extends LitElement {
             ></button>
           </div>
         </div>
-        ${isOn ? html`
-          <input
-            type="range"
-            min="1"
-            max="100"
-            .value="${brightnessPct}"
-            @change="${(e) => this._setBrightness(lightCfg.entity, e)}"
-            style="background: linear-gradient(to right, var(--mc-slider-thumb) ${brightnessPct}%, var(--mc-slider-track) ${brightnessPct}%)"
-          />
-        ` : ''}
+        <input
+          type="range"
+          min="1"
+          max="100"
+          .value="${isOn ? brightnessPct : 0}"
+          ?disabled="${!isOn}"
+          @change="${(e) => this._setBrightness(lightCfg.entity, e)}"
+          style="background: linear-gradient(to right, #ffb938 ${isOn ? brightnessPct : 0}%, rgba(255,255,255,0.12) ${isOn ? brightnessPct : 0}%)"
+        />
       </div>
     `;
   }
